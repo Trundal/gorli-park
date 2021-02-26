@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "PLACEHOLDER_ENV_VARIABLES_WILL_HANDLE_FOR_US",
-    "dataset": "PLACEHOLDER_ENV_VARIABLES_WILL_HANDLE_FOR_US"
+    "projectId": "k1ghvlsq",
+    "dataset": "production"
   },
   "project": {
-    "name": "Next.js Comment-enabled blog",
+    "name": "Gorli Park",
     "basePath": "/studio"
   },
   "plugins": [
