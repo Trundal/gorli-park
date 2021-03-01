@@ -24,10 +24,7 @@
     "swr": "^0.4.2"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
     "@sanity/cli": "^2.4.0",
-    "lerna": "^3.22.1",
-    "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.5.2"
+    "lerna": "^3.22.1"
   }
 }
