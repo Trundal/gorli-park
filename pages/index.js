@@ -23,7 +23,18 @@ export default function Index({ allPosts, preview, landingPage }) {
           {heroPost && (
             <HeroPost
               title={hero.title}
-              coverImage={hero.coverImage}
+              coverImage={hero.mainImage}
+            
+            />
+          )}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Container>
+        <Container>
+          <Intro />
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.coverImage}
             
             />
           )}
@@ -37,8 +48,6 @@ export default function Index({ allPosts, preview, landingPage }) {
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview)
   const landingPage = await getLandingPage()
-
-  console.log(landingPage.body)
   return {
     props: { allPosts, preview, landingPage },
     revalidate: 1

@@ -1,0 +1,21 @@
+.header {
+  margin: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.internalLinks {
+  width: 45vw;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.externalLinks {
+  width: 45vw;
+  display: flex;
+  justify-content: flex-end;
+}
