@@ -4,15 +4,8 @@ import CoverImage from "../components/cover-image";
 import Link from "next/link";
 import styled from "./hero-post.module.css";
 
-export default function HeroPost({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-}) {
-  console.log(title, coverImage, date, excerpt, author, slug);
+export default function HeroPost({ post }) {
+  const { title, coverImage, date, excerpt, author, slug } = post;
   return (
     <section className={styled.section}>
       <div className={styled.img}>

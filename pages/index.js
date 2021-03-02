@@ -7,10 +7,11 @@ import { getAllPostsForHome, getLandingPage } from "../lib/api";
 import Head from "next/head";
 
 export default function Index({ allPosts, preview, landingPage }) {
+  //heroPost is just latest post, we should have "Featured"
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   const hero = landingPage;
-  console.log("🎅🎅🎅🎅🎅" + heroPost);
+
   return (
     <>
       <Layout preview={preview}>
@@ -27,9 +28,7 @@ export default function Index({ allPosts, preview, landingPage }) {
           )}
         </Container>
         <Container>
-          {heroPost && (
-            <HeroPost title={heroPost.title} coverImage={heroPost.coverImage} />
-          )}
+          {heroPost && <HeroPost post={heroPost} />}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
@@ -40,6 +39,8 @@ export default function Index({ allPosts, preview, landingPage }) {
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
   const landingPage = await getLandingPage();
+  //this is how deep it goes when you triy to find the allusive "excerpt"
+  //console.log(allPosts[0].excerpt[0].children[0].text);
   return {
     props: { allPosts, preview, landingPage },
     revalidate: 1,
