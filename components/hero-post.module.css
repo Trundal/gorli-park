@@ -1,0 +1,13 @@
+.section {
+  background-color: var(--secondaryColor);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+}

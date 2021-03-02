@@ -28,13 +28,19 @@ export default function Header() {
       <Logo />
       <div className={styled.externalLinks}>
         <Link href="/">
-          <Github />
+          <div className={styled.externalLinkIcon}>
+            <Github />
+          </div>
         </Link>
         <Link href="/">
-          <Facebook />
+          <div className={styled.externalLinkIcon}>
+            <Facebook />
+          </div>
         </Link>
         <Link href="/">
-          <Twitter />
+          <div className={styled.externalLinkIcon}>
+            <Twitter />
+          </div>
         </Link>
       </div>
     </header>

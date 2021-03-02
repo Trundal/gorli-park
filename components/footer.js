@@ -1,12 +1,11 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import Container from "./container";
 
 export default function Footer() {
   return (
-    <footer >
+    <footer>
       <Container>
-      
+        <p>i have a bunch of links and styff</p>
       </Container>
     </footer>
-  )
+  );
 }

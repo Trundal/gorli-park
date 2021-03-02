@@ -1,18 +1,35 @@
-:root, body {
-    --black: #0A1714;
-    --white: #FCFBF9;
-    --primaryColor: #F4D570;
-    --secondaryColor: #70F4D5;
+:root,
+body {
+  --black: #0a1714;
+  --white: #fcfbf9;
+  --primaryColor: #f4d570;
+  --secondaryColor: #70f4d5;
 
-    padding: 0;
-    margin: 0;
-    font-size: 62.5%;
-    font-family: 'Quicksand', sans-serif;
+  --font: "Quicksand", sans-serif;
 
-    background-color: var(--white);;
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Quicksand", sans-serif;
+
+  background-color: var(--white);
+  color: var(--black);
 }
 
 a {
-    color: var(--black);
-    text-decoration: none; 
-  }
+  color: var(--black);
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--primaryColor);
+  font-family: var(--font);
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--black);
+  padding: 1.5rem 3.2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+}

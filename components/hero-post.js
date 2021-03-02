@@ -2,6 +2,7 @@ import Avatar from "../components/avatar";
 import Date from "../components/date";
 import CoverImage from "../components/cover-image";
 import Link from "next/link";
+import styled from "./hero-post.module.css";
 
 export default function HeroPost({
   title,
@@ -11,9 +12,11 @@ export default function HeroPost({
   author,
   slug,
 }) {
+  console.log(title, coverImage, date, excerpt, author, slug);
   return (
-    <section>
-      <div>
+    <section className={styled.section}>
+      <div className={styled.img}>
+        {/* not changing this to the next-image before i've figured out if sanity checks for webp  */}
         <CoverImage
           slug={slug}
           imageObject={coverImage}
@@ -25,13 +28,15 @@ export default function HeroPost({
         <div>
           <h3>
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
-              <a>{title}</a>
+              <a className={styled.title}>{title}</a>
             </Link>
           </h3>
-          <div>{date ? <Date dateString={date} /> : ""}</div>
+          <div className={styled.date}>
+            {date ? <Date dateString={date} /> : ""}
+          </div>
         </div>
         <div>
-          <p>{excerpt}</p>
+          <p className={styled.excerpt}>{excerpt}</p>
           <Avatar name={author?.name} picture={author?.picture} />
         </div>
       </div>
