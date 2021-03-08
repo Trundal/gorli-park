@@ -39,8 +39,10 @@ export default function Index({ allPosts, preview, landingPage }) {
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
   const landingPage = await getLandingPage();
-  //this is how deep it goes when you triy to find the allusive "excerpt"
-  //console.log(allPosts[0].excerpt[0].children[0].text);
+
+  //excerpt fucks everything up... its suposed to just be a string
+  //but all hell breaks loose... "oohhhh cant pass objects". It's a string!
+  //console.log(allPosts[0].excerpt);
   return {
     props: { allPosts, preview, landingPage },
     revalidate: 1,

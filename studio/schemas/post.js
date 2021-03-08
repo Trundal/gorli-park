@@ -45,7 +45,7 @@ export default {
     {
       name: "excerpt",
       title: "Excerpt",
-      type: "blockContent",
+      type: "string",
     },
     {
       name: "body",

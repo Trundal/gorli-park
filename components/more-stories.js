@@ -1,12 +1,13 @@
-import PostPreview from '../components/post-preview'
+import PostPreview from "../components/post-preview";
+import styled from "./more-stories.module.css";
 
 export default function MoreStories({ posts }) {
   return (
-    <section>
-      <h2>
-        More Stories
-      </h2>
-      <div >
+    <section className={styled.wrapper}>
+      <div>
+        <h2 style={{ fontSize: "3rem", textAlign: "center" }}>More Stories</h2>
+      </div>
+      <div className={styled.postWrapper}>
         {posts.map((post) => (
           <PostPreview
             key={post.slug}
@@ -15,10 +16,10 @@ export default function MoreStories({ posts }) {
             date={post.date}
             author={post.author}
             slug={post.slug}
-            excerpt={post.excerpt}
+            description={post.description}
           />
         ))}
       </div>
     </section>
-  )
+  );
 }

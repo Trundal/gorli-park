@@ -1,20 +1,20 @@
 import Avatar from "../components/avatar";
 import Date from "../components/date";
-import CoverImage from "./cover-image";
+import PreviewImage from "./preview-image";
 import Link from "next/link";
 import { imageBuilder } from "../lib/sanity";
+import styled from "./post-preview.module.css";
 export default function PostPreview({
   title,
   coverImage,
   date,
-  excerpt,
-  author,
+  description,
   slug,
 }) {
   return (
-    <div>
+    <div style={{ width: "50rem", marginBottom: "2rem" }}>
       <div>
-        <CoverImage
+        <PreviewImage
           slug={slug}
           title={title}
           imageObject={coverImage}
@@ -23,15 +23,13 @@ export default function PostPreview({
       </div>
       <h3>
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a>{title}</a>
+          <a className={styled.title}>{title}</a>
         </Link>
       </h3>
-      <div>
-        <Date dateString={date} />
+      <div className={styled.date}>
+        {date ? <Date dateString={date} /> : ""}
       </div>
-      <p>{excerpt}</p>
-      {/* ?. apparantly is a thing https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining */}
-      <Avatar name={author?.name} picture={author?.picture} />
+      <p className={styled.description}>{description}</p>
     </div>
   );
 }
