@@ -4,9 +4,6 @@ import styled from "./more-stories.module.css";
 export default function MoreStories({ posts }) {
   return (
     <section className={styled.wrapper}>
-      <div>
-        <h2 style={{ fontSize: "3rem", textAlign: "center" }}>More Stories</h2>
-      </div>
       <div className={styled.postWrapper}>
         {posts.map((post) => (
           <PostPreview
