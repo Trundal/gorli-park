@@ -5,7 +5,13 @@ export default function Footer() {
     <footer>
       <Link href="/privacy-policy-and-terms-of-service">
         <div style={{ marginRight: "2rem" }}>
-          <p style={{ textAlign: "right", fontSize: "1.8rem" }}>
+          <p
+            style={{
+              textAlign: "right",
+              fontSize: "1.8rem",
+              cursor: "pointer",
+            }}
+          >
             privacy policy and terms of service
           </p>
         </div>
