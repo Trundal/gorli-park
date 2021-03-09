@@ -1,31 +1,35 @@
-import Avatar from '../components/avatar'
-import Date from '../components/date'
-import CoverImage from './cover-image'
-import Link from 'next/link'
-import {imageBuilder} from '../lib/sanity'
+import Avatar from "../components/avatar";
+import Date from "../components/date";
+import PreviewImage from "./preview-image";
+import Link from "next/link";
+import { imageBuilder } from "../lib/sanity";
+import styled from "./post-preview.module.css";
 export default function PostPreview({
   title,
   coverImage,
   date,
-  excerpt,
-  author,
+  description,
   slug,
 }) {
   return (
-    <div>
-      <div className="mb-5">
-        <CoverImage slug={slug} title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
+    <div style={{ width: "50rem", marginBottom: "2rem" }}>
+      <div>
+        <PreviewImage
+          slug={slug}
+          title={title}
+          imageObject={coverImage}
+          url={imageBuilder(coverImage).url()}
+        />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
+      <h3>
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
+          <a className={styled.title}>{title}</a>
         </Link>
       </h3>
-      <div className="text-lg mb-4">
-        <Date dateString={date} />
+      <div className={styled.date}>
+        {date ? <Date dateString={date} /> : ""}
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author?.name} picture={author?.picture} />
+      <p className={styled.description}>{description}</p>
     </div>
-  )
+  );
 }

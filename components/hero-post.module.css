@@ -1,0 +1,30 @@
+.section {
+  background-color: var(--secondaryColor);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  width: 35%;
+  margin: 0 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: right;
+  margin: 0 0 1rem 0;
+}
+
+.date,
+.description {
+  font-size: 1.8rem;
+  text-align: right;
+}

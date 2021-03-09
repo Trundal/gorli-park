@@ -1,8 +1,14 @@
+import { imageBuilder } from "../lib/sanity";
+
 export default function Avatar({ name, picture }) {
   return (
-    <div className="flex items-center">
-      <img src={picture} className="w-12 h-12 rounded-full mr-4" alt={name} />
-      <div className="text-xl font-bold">{name}</div>
+    <div style={{ width: "15rem" }}>
+      <img
+        style={{ borderRadius: "75% 100% 75% 100%", margin: "1rem" }}
+        src={imageBuilder(picture).width(150).height(150).url()}
+        alt={name}
+      />
+      <div style={{ fontSize: "2rem", textAlign: "center" }}>{name}</div>
     </div>
-  )
+  );
 }
