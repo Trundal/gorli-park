@@ -1,8 +1,12 @@
 .header {
-  margin: 0.7rem;
+  position: relative;
+  padding: 8px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 5;
+  /* background-color: rgba(255, 255, 255, .5); */
+  background: linear-gradient(rgba(255,255,255,.7) 20%, rgba(255,255,255,0) 80%);
 }
 
 .internalLinks {

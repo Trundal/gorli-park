@@ -1,0 +1,12 @@
+.title {
+    margin-bottom: 0;
+}
+.date {
+    color: #666;
+    margin-left: 8px;
+    font-size: smaller;
+}
+.nameBlock {
+    display: flex;
+    align-items: center;
+}

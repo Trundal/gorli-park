@@ -1,0 +1,12 @@
+.title {
+  font-size: 3rem;
+}
+
+.date date,
+.description {
+  font-size: 2rem;
+  text-align: justify;
+}
+
+.description {
+}
