@@ -13,7 +13,7 @@ export default function Index({ allPosts, preview, landingPage }) {
   const hero = landingPage;
 
   return (
-    <Layout preview={preview} bgGraphic={post ? post.bgGraphic : null}>
+    <Layout preview={preview} bgGraphic={landingPage ? landingPage.bgGraphic : null}>
     <Head>
       <title>GorliPark</title>
     </Head>
