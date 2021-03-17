@@ -4,6 +4,7 @@ body {
   --white: #fcfbf9;
   --primaryColor: #f4d570;
   --secondaryColor: #70f4d5;
+  --backgroundColor: #58585B;
 
   --font: "Quicksand", sans-serif;
 
@@ -13,11 +14,11 @@ body {
   font-family: "Quicksand", sans-serif;
 
   background-color: var(--white);
-  color: var(--black);
+  color: var(--white);
 }
 
 a {
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
 }
 

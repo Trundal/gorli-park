@@ -1,8 +1,8 @@
-import Avatar from "../components/avatar";
-import Date from "../components/date";
-import CoverImage from "../components/cover-image";
+import Avatar from "../avatar";
+import Date from "../date";
+import CoverImage from "../cover-image";
 import Link from "next/link";
-import styled from "./hero-post.module.css";
+import styled from "./HeroPost.module.css";
 
 export default function HeroPost({ post }) {
   const { title, coverImage, date, description, author, slug } = post;
@@ -17,9 +17,7 @@ export default function HeroPost({ post }) {
           url={coverImage}
         />
       </div>
-      <div
-        style={{ display: "flex", margin: "4rem", justifyContent: "center" }}
-      >
+      <div className={styled.textBlock}>
         <div className={styled.text}>
           <h3 className={styled.title}>
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -29,17 +27,10 @@ export default function HeroPost({ post }) {
           <div className={styled.date}>
             {date ? <Date dateString={date} /> : ""}
           </div>
-          {/* this is where the exerpt will go... but that is a block element 
-          and cant be passed as props. So there is some long as work around that 
-          I don't want to get in to right now  */}
           <p className={styled.description}>{description}</p>
         </div>
-        <div style={{ width: "33%" }}>
-          <div
-            style={{
-              borderLeft: ".5rem solid var(--primaryColor)",
-            }}
-          >
+        <div className={styled.avatar}>
+          <div className={styled.border} >
             <Avatar name={author?.name} picture={author?.picture} />
           </div>
         </div>

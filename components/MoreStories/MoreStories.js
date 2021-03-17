@@ -1,5 +1,5 @@
-import PostPreview from "../components/post-preview";
-import styled from "./more-stories.module.css";
+import PostPreview from "../Preview/Preview";
+import styled from "./MoreStories.module.css";
 
 export default function MoreStories({ posts }) {
   return (

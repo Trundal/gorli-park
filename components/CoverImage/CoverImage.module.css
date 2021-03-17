@@ -1,4 +1,7 @@
 .image {
-    margin-top: -95px;
-    z-index: -2;
+    width: 100%;
+}
+
+.image img {
+    border-radius: 1.5rem
 }

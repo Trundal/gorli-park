@@ -1,10 +1,11 @@
-import Avatar from "../components/avatar";
-import Date from "../components/date";
-import PreviewImage from "./preview-image";
+import Avatar from "../avatar";
+import Date from "../date";
+import PreviewImage from "../preview-image";
 import Link from "next/link";
-import { imageBuilder } from "../lib/sanity";
-import styled from "./post-preview.module.css";
-export default function PostPreview({
+import { imageBuilder } from "../../lib/sanity";
+import styled from "./Preview.module.css";
+
+export default function Preview({
   title,
   coverImage,
   date,
@@ -12,8 +13,8 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div style={{ width: "50rem", marginBottom: "2rem" }}>
-      <div>
+    <div className={styled.block}>
+      <div className={styled.image}>
         <PreviewImage
           slug={slug}
           title={title}

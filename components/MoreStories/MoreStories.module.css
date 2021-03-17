@@ -1,0 +1,8 @@
+.postWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1600px;
+  padding: 3rem;
+  margin: auto;
+}

@@ -1,5 +1,6 @@
 .title {
     margin-bottom: 0;
+    color: var(--black);
 }
 .date {
     color: #666;
@@ -9,4 +10,5 @@
 .nameBlock {
     display: flex;
     align-items: center;
+    color: var(--black);
 }

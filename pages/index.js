@@ -1,8 +1,8 @@
 import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Hero from "../components/hero";
-import Layout from "../components/layout";
+import MoreStories from "../components/MoreStories/MoreStories";
+import HeroPost from "../components/HeroPost/HeroPost";
+import Hero from "../components/Hero/Hero";
+import Layout from "../components/Layout/Layout";
 import { getAllPostsForHome, getLandingPage } from "../lib/api";
 import Head from "next/head";
 
@@ -13,26 +13,25 @@ export default function Index({ allPosts, preview, landingPage }) {
   const hero = landingPage;
 
   return (
-    <>
-      <Layout preview={preview}>
-        <Head>
-          <title>GorliPark</title>
-        </Head>
-        <Container>
-          {hero && (
-            <Hero
-              title={hero.title}
-              coverImage={hero.mainImage}
-              body={landingPage.body[0].children[0].text}
-            />
-          )}
-        </Container>
-        <Container>
-          {heroPost && <HeroPost post={heroPost} />}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-      </Layout>
-    </>
+    <Layout preview={preview} bgGraphic={landingPage.bgGraphic}>
+    <Head>
+      <title>GorliPark</title>
+    </Head>
+    <Container>
+      {hero && (
+        <Hero
+          title={hero.title}
+          coverImage={hero.mainImage}
+          bgGraphic={hero.bgGraphic}
+          body={landingPage.body[0].children[0].text}
+        />
+      )}
+    </Container>
+    <Container>
+      {heroPost && <HeroPost post={heroPost} />}
+      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+    </Container>
+  </Layout>
   );
 }
 

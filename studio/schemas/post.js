@@ -52,6 +52,11 @@ export default {
       title: "Body",
       type: "blockContent",
     },
+    {
+      name: "bgGraphic",
+      title: "Background Graphic",
+      type: "image"
+    },
   ],
 
   preview: {
