@@ -2,7 +2,7 @@ import Image from "next/image";
 import { imageBuilder } from "../../lib/sanity";
 import styles from "./Hero.module.css";
 
-export default function HeroPost({ title, coverImage, bgGraphic, body }) {
+export default function HeroPost({ title, coverImage, body }) {
 
   return (
     <section className={styles.section}>

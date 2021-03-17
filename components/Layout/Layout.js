@@ -9,16 +9,19 @@ import styles from './Layout.module.css';
 
 export default function Layout({ preview, children, bgGraphic }) {
 
-  const backgroundStyles = {
-    background: `url(${imageBuilder(bgGraphic).url()})`,
-    backgroundAttachment: 'fixed',
+  let backgroundStyles = {
     backgroundColor: '#58585B',
-    backgroundPositionX: 'center',
-    backgroundPositionY: 'center',
-    backgroundSize: 'cover',
   }
-
-  console.log(backgroundStyles);
+  if (bgGraphic) {
+    backgroundStyles = {
+      background: `url(${imageBuilder(bgGraphic).url()})`,
+      backgroundAttachment: 'fixed',
+      backgroundColor: '#58585B',
+      backgroundPositionX: 'center',
+      backgroundPositionY: 'center',
+      backgroundSize: 'cover',
+    }
+  }
 
   return (
     <>
