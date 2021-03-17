@@ -1,0 +1,51 @@
+.section {
+  background-color: var(--white);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--black);
+}
+
+.img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 1.5rem;
+}
+
+.img img {
+  border-radius: 1.5rem
+}
+
+.textBlock {
+  display: flex;
+  margin-top: 4rem;
+  justify-content: center;
+}
+
+.text {
+  font-size: 1.25rem;
+  margin: 0 3rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: right;
+  margin: 0 0 1rem 0;
+  color: var(--black);
+}
+
+.date,
+.description {
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.border {
+  border-left: .5rem solid var(--primaryColor);
+}
+
+.avatar {
+  width: 33%;
+}

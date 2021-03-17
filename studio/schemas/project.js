@@ -1,6 +1,6 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "project",
+  title: "Project",
   type: "document",
   fields: [
     {
@@ -51,11 +51,6 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent",
-    },
-    {
-      name: "bgGraphic",
-      title: "Background Graphic",
-      type: "image"
     },
   ],
 

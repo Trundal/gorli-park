@@ -1,6 +1,8 @@
 import cn from "classnames";
 import Link from "next/link";
-import { imageBuilder } from "../lib/sanity";
+import { imageBuilder } from "../../lib/sanity";
+
+import styles from './CoverImage.module.css'
 
 export default function CoverImage({ title, url, imageObject, slug }) {
   const image = (
@@ -15,7 +17,7 @@ export default function CoverImage({ title, url, imageObject, slug }) {
   );
 
   return (
-    <div>
+    <div className={styles.image}>
       {slug ? (
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a aria-label={title}>{image}</a>

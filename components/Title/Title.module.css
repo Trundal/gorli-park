@@ -1,0 +1,14 @@
+.title {
+    margin-bottom: 0;
+    color: var(--black);
+}
+.date {
+    color: #666;
+    margin-left: 8px;
+    font-size: smaller;
+}
+.nameBlock {
+    display: flex;
+    align-items: center;
+    color: var(--black);
+}

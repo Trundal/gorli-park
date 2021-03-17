@@ -1,17 +1,12 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import MoreStories from '../../components/more-stories'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import Comments from '../../components/comments'
-import SectionSeparator from '../../components/section-separator'
-import Layout from '../../components/layout'
+import MoreStories from '../../components/MoreStories/MoreStories'
+import Layout from '../../components/Layout/Layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import Form from '../../components/form'
+import Article from '../../components/Article/Article'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -19,33 +14,31 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} bgGraphic={post ? post.bgGraphic : null}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
               <Head>
                 <title>
                   {post.title} 
                 </title>
                 {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.body} />
-            </article>
+              <article>
+                <Article 
+                  title = {post.title}
+                  body = {post.body}
+                  author = {post.author}
+                  date = {post.date}
+                  coverImage = {post.coverImage}
+                />
+              </article>
 
-            <Comments comments={post.comments} />
-            <Form _id={post._id} />
+            {/* <Comments comments={post.comments} />
+            <Form _id={post._id} /> */}
 
-            <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}

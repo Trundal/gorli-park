@@ -17,6 +17,11 @@ export default {
         }
       },
       {
+        name: 'bgGraphic',
+        title: 'Background Graphic',
+        type: 'image'
+      },
+      {
         name: 'body',
         title: 'Body',
         type: 'blockContent'

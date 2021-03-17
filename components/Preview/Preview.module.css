@@ -1,0 +1,21 @@
+.block {
+  width: 25%;
+  margin: 1rem;
+  min-width: 300px;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.date date,
+.description {
+  font-size: 1.25rem;
+  text-align: justify;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+}
+
