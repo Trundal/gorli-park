@@ -9,14 +9,14 @@ export default function Header() {
   return (
     <header className={styled.header}>
       <div className={styled.internalLinks}>
-        <h2>
+        {/* <h2>
           <Link href="/">
             <a>PROJECTS</a>
           </Link>
-        </h2>
+        </h2> */}
         <h2>
-          <Link href="/">
-            <a>BLOG</a>
+          <Link href="/stories">
+            <a>STORIES</a>
           </Link>
         </h2>
         <h2>
