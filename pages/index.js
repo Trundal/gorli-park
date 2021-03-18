@@ -1,5 +1,5 @@
 import Container from "../components/container";
-import MoreStories from "../components/MoreStories/MoreStories";
+import Stories from "../components/Stories/Stories";
 import HeroPost from "../components/HeroPost/HeroPost";
 import Hero from "../components/Hero/Hero";
 import Layout from "../components/Layout/Layout";
@@ -28,7 +28,7 @@ export default function Index({ allPosts, preview, landingPage }) {
     </Container>
     <Container>
       {heroPost && <HeroPost post={heroPost} />}
-      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      {morePosts.length > 0 && <Stories posts={morePosts} title={'More Stories'} />}
     </Container>
   </Layout>
   );

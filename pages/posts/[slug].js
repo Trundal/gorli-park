@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
-import MoreStories from '../../components/MoreStories/MoreStories'
+import Stories from '../../components/Stories/Stories'
 import Layout from '../../components/Layout/Layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
@@ -39,7 +39,7 @@ export default function Post({ post, morePosts, preview }) {
             {/* <Comments comments={post.comments} />
             <Form _id={post._id} /> */}
 
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            {morePosts.length > 0 && <Stories posts={morePosts} title={'More Stories'}/>}
           </>
         )}
       </Container>

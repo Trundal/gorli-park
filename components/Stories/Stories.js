@@ -1,11 +1,11 @@
 import PostPreview from "../Preview/Preview";
-import styled from "./MoreStories.module.css";
+import styled from "./Stories.module.css";
 
-export default function MoreStories({ posts }) {
+export default function MoreStories({ posts, title }) {
   return (
     <section className={styled.wrapper}>
       <div>
-        <h2 style={{ fontSize: "3rem", textAlign: "center" }}>More Stories</h2>
+        <h2 style={{ fontSize: "3rem", textAlign: "center" }}>{title}</h2>
       </div>
       <div className={styled.postWrapper}>
         {posts.map((post) => (
