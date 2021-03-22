@@ -1,0 +1,31 @@
+.footer {
+    background-color: var(--white);
+    width: 100%;
+    padding: 10px 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: auto;
+    color: var(--black);
+}
+
+.copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.separator {
+    color: #aaa;
+    margin: 0 5px;
+}

@@ -1,6 +1,6 @@
 import { imageBuilder } from "../../lib/sanity";
 
-import Footer from '..//footer'
+import Footer from '../Footer/Footer'
 import Meta from '../meta'
 import Header from '../header'
 
