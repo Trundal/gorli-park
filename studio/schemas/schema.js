@@ -10,6 +10,7 @@ import category from './category'
 import post from './post'
 import project from './project'
 import author from './author'
+import about from './about'
 import comment from './comment'
 import landingPage from './landingPage'
 import site from './site'
@@ -28,6 +29,7 @@ export default createSchema({
     post,
     project,
     author,
+    about,
     category,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
