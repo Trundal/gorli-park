@@ -12,6 +12,7 @@ import project from './project'
 import author from './author'
 import comment from './comment'
 import landingPage from './landingPage'
+import site from './site'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -23,6 +24,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    site,
     post,
     project,
     author,
