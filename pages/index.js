@@ -3,25 +3,24 @@ import Stories from "../components/Stories/Stories";
 import HeroPost from "../components/HeroPost/HeroPost";
 import Hero from "../components/Hero/Hero";
 import Layout from "../components/Layout/Layout";
-import { getAllPostsForHome, getLandingPage } from "../lib/api";
+import { getAllPostsForHome, getLandingPage, getSite } from "../lib/api";
 import Head from "next/head";
 
-export default function Index({ allPosts, preview, landingPage }) {
-  //heroPost is just latest post, we should have "Featured"
+export default function Index({ allPosts, preview, landingPage, site }) {
+  // TODO: heroPost is just latest post, we should have "Featured"
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
-  const hero = landingPage;
 
   return (
-    <Layout preview={preview} bgGraphic={landingPage ? landingPage.bgGraphic : null}>
+    <Layout preview={preview} bgGraphic={site ? site.bgGraphic : null}>
     <Head>
       <title>GorliPark</title>
     </Head>
     <Container>
-      {hero && (
+      {landingPage && (
         <Hero
-          title={hero.title}
-          coverImage={hero.mainImage}
+          title={landingPage.title}
+          coverImage={landingPage.mainImage}
           body={landingPage.body[0].children[0].text}
         />
       )}
@@ -37,12 +36,10 @@ export default function Index({ allPosts, preview, landingPage }) {
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
   const landingPage = await getLandingPage();
+  const site = await getSite();
 
-  //excerpt fucks everything up... its suposed to just be a string
-  //but all hell breaks loose... "oohhhh cant pass objects". It's a string!
-  //console.log(allPosts[0].excerpt);
   return {
-    props: { allPosts, preview, landingPage },
+    props: { allPosts, preview, landingPage, site },
     revalidate: 1,
   };
 }

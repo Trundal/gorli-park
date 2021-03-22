@@ -3,18 +3,18 @@ import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import Stories from '../../components/Stories/Stories'
 import Layout from '../../components/Layout/Layout'
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import { getAllPostsWithSlug, getPostAndMorePosts, getSite } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Article from '../../components/Article/Article'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts, preview, site }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview} bgGraphic={post ? post.bgGraphic : null}>
+    <Layout preview={preview} bgGraphic={site ? site.bgGraphic : null}>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -49,11 +49,13 @@ export default function Post({ post, morePosts, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview)
+  const site = await getSite();
   return {
     props: {
       preview,
       post: data?.post || null,
       morePosts: data?.morePosts || null,
+      site
     },
     revalidate: 1
   }

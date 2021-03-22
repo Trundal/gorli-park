@@ -1,13 +1,13 @@
 import Container from "../components/container";
 import Stories from "../components/Stories/Stories";
 import Layout from "../components/Layout/Layout";
-import { getAllPostsForHome, getLandingPage } from "../lib/api";
+import { getAllPostsForHome, getSite } from "../lib/api";
 import Head from "next/head";
 
-export default function Index({ allPosts, preview, landingPage }) {
+export default function Index({ allPosts, preview, site }) {
 
   return (
-    <Layout preview={preview} bgGraphic={landingPage ? landingPage.bgGraphic : null}>
+    <Layout preview={preview} bgGraphic={site ? site.bgGraphic : null}>
     <Head>
       <title>GorliPark - Stories</title>
     </Head>
@@ -20,10 +20,10 @@ export default function Index({ allPosts, preview, landingPage }) {
 
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
-  const landingPage = await getLandingPage();
+  const site = await getSite();
 
   return {
-    props: { allPosts, preview, landingPage },
+    props: { allPosts, preview, site },
     revalidate: 1,
   };
 }
