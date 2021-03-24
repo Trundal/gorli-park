@@ -2,7 +2,7 @@
   "root": true,
   "api": {
     "projectId": "k1ghvlsq",
-    "dataset": "production"
+    "dataset": "development"
   },
   "project": {
     "name": "Gorli Park",
@@ -17,9 +17,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

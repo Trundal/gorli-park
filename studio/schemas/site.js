@@ -13,6 +13,16 @@ export default {
         title: 'Background Colour',
         type: 'string'
       },
+      {
+        name: 'privacy',
+        title: 'Privacy',
+        type: 'blockContent'
+      },
+      {
+        name: 'imprint',
+        title: 'Imprint',
+        type: 'blockContent'
+      }
     ]
 }
   

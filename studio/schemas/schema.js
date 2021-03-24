@@ -9,6 +9,7 @@ import blockContent from "./blockContent";
 import category from "./category";
 import post from "./post";
 import portfolio from "./portfolio";
+import about from "./about";
 import author from "./author";
 import comment from "./comment";
 import landingPage from "./landingPage";
@@ -27,6 +28,7 @@ export default createSchema({
     post,
     portfolio,
     author,
+    about,
     category,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

@@ -4,7 +4,7 @@ import Container from "../../components/container";
 import Stories from "../../components/Stories/Stories";
 import Layout from "../../components/Layout/Layout";
 import {
-  getAllPortfolio,
+  getAllPortfolioEntries,
   getPortfolioEntryAndMorePortfolioEntries,
   getSite,
 } from "../../lib/api";
@@ -12,14 +12,14 @@ import PostTitle from "../../components/post-title";
 import Head from "next/head";
 import Article from "../../components/Article/Article";
 
-export default function Post({
+export default function PortfolioEntry({
   portfolioEntry,
   morePortfolioEntries,
   preview,
   site,
 }) {
   const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !portfolioEntry?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
@@ -46,7 +46,7 @@ export default function Post({
             {/* <Comments comments={post.comments} />
             <Form _id={post._id} /> */}
 
-            {moreportfolioEntries.length > 0 && (
+            {morePortfolioEntries.length > 0 && (
               <Stories posts={morePortfolioEntries} title={"More Projects"} />
             )}
           </>
@@ -62,11 +62,12 @@ export async function getStaticProps({ params, preview = false }) {
     preview
   );
   const site = await getSite();
+  console.log("===========>>>>>>>>>>>" + JSON.stringify(data));
   return {
     props: {
       preview,
-      portfolioEntry: data?.portfolio || null,
-      morePortfolioEntries: data?.morePostEntries || null,
+      portfolioEntry: data?.portfolioEntry || null,
+      morePortfolioEntries: data?.morePortfolioEntries || null,
       site,
     },
     revalidate: 1,
@@ -74,12 +75,12 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPortfolio();
+  const allEntries = await getAllPortfolioEntries();
   return {
     paths:
-      allPosts?.map((post) => ({
+      allEntries?.map((entry) => ({
         params: {
-          slug: post.slug,
+          slug: entry.slug,
         },
       })) || [],
     fallback: true,
