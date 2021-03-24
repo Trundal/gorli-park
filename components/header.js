@@ -20,7 +20,12 @@ export default function Header() {
           </Link>
         </h2>
         <h2>
-          <Link href="/about">
+          <Link href="/portfolio">
+            <a>PORTFOLIO</a>
+          </Link>
+        </h2>
+        <h2>
+          <Link href="/">
             <a>ABOUT US</a>
           </Link>
         </h2>

@@ -1,1 +1,41 @@
-/* big ass TODO */
+.markdown html,
+.markdown body,
+.markdown div,
+.markdown span,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.markdown p,
+.markdown section,
+.markdown summary,
+.markdown time {
+  font-weight: 400;
+  border: 0;
+  font-size: 150%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.markdown p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+/* @media only screen and (min-width: 800px) {
+  .markdown p {
+    column-count: 2;
+    column-gap: 4rem;
+  }
+} */
+
+.markdown html,
+.markdown body {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  font-kerning: normal;
+}
