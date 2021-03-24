@@ -62,7 +62,6 @@ export async function getStaticProps({ params, preview = false }) {
     preview
   );
   const site = await getSite();
-  console.log("===========>>>>>>>>>>>" + JSON.stringify(data));
   return {
     props: {
       preview,

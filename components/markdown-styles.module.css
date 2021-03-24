@@ -26,12 +26,12 @@
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-@media only screen and (min-width: 800px) {
+/* @media only screen and (min-width: 800px) {
   .markdown p {
     column-count: 2;
     column-gap: 4rem;
   }
-}
+} */
 
 .markdown html,
 .markdown body {
