@@ -1,8 +1,12 @@
+import {useState} from 'react'
 import Image from "next/image";
 import { imageBuilder } from "../../lib/sanity";
+import Contact from '../Contact/Contact'
+import Modal from '../Modal/Modal'
 import styles from "./Hero.module.css";
 
 export default function HeroPost({ title, coverImage, body }) {
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <section className={styles.section}>
@@ -21,7 +25,12 @@ export default function HeroPost({ title, coverImage, body }) {
         <div>
           <p className={styles.body}>{body}</p>
         </div>
-        <button className={styles.btn}>A THING</button>
+        <button className={styles.btn} onClick={() => setModalOpen(!modalOpen)}>A THING</button>
+        { modalOpen && 
+          <Modal closeModal={() => setModalOpen(false)}>
+            <Contact/>
+          </Modal>
+          }
       </div>
     </section>
   );
