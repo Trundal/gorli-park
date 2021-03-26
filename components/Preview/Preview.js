@@ -11,6 +11,7 @@ export default function Preview({
   date,
   description,
   slug,
+  pageType,
 }) {
   return (
     <div className={styled.block}>
@@ -18,13 +19,21 @@ export default function Preview({
         <PreviewImage
           slug={slug}
           title={title}
+          pageType={pageType}
           imageObject={coverImage}
           url={imageBuilder(coverImage).url()}
         />
       </div>
       <h3>
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className={styled.title}>{title}</a>
+        //
+        <Link
+          as={`/${pageType.toLowerCase()}/${slug}`}
+          href={`/${pageType.toLowerCase()}/[slug]`}
+        >
+          <a className={styled.title}>
+            {title}
+            {pageType}
+          </a>
         </Link>
       </h3>
       <div className={styled.date}>

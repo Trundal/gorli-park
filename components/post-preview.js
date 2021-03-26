@@ -22,7 +22,7 @@ export default function PostPreview({
         />
       </div>
       <h3>
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link as={`/posts/${slug}`} href={`/posts/[slug]`}>
           <a className={styled.title}>{title}</a>
         </Link>
       </h3>

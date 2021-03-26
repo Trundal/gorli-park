@@ -20,6 +20,7 @@
     "next": "latest",
     "next-sanity": "^0.1.5",
     "react": "^17.0.1",
+    "react-alice-carousel": "^2.4.0",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.15.4",
     "swr": "^0.4.2"
