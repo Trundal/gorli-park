@@ -61,6 +61,15 @@ export default function contact() {
       .catch((error) => {
         handleServerResponse(false, error.response.data.error);
       });
+    axios({
+      method: "POST",
+      url: "/api/mail-backer.js",
+      data: inputs,
+    })
+      .then((response) => console.log(response))
+      .catch((error) => {
+        handleServerResponse(false, error.response.data.error);
+      });
   };
   return (
     <div className={styles.form}>
