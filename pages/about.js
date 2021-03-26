@@ -1,26 +1,19 @@
-import Container from "../components/Container/Container";
-import Bio from "../components/Bio/Bio";
-import Layout from "../components/Layout/Layout";
-import { getSite, getAbout } from "../lib/api";
-import Head from "next/head";
+import Container from '../components/Container/Container';
+import Bio from '../components/Bio/Bio';
+import Layout from '../components/Layout/Layout';
+import { getSite, getAbout } from '../lib/api';
+import Head from 'next/head';
 
 export default function Index({ preview, about, bgGraphic }) {
-  console.log(about);
-
   return (
     <Layout preview={preview} bgGraphic={bgGraphic}>
       <Head>
         <title>GorliPark - Imprint</title>
       </Head>
       <Container>
-        { about.map(bio => 
-          <Bio 
-            bio={bio.bio}
-            name={bio.name}
-            title={bio.title}
-            image={bio.image}
-          />
-        )}
+        {about.map((bio) => (
+          <Bio key={bio.name} bio={bio.bio} name={bio.name} title={bio.title} image={bio.image} />
+        ))}
       </Container>
     </Layout>
   );

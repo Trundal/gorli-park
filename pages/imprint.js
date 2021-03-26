@@ -1,18 +1,17 @@
-import Container from "../components/Container/Container";
-import Body from "../components/Body/Body";
-import Layout from "../components/Layout/Layout";
-import { getSite } from "../lib/api";
-import Head from "next/head";
+import Container from '../components/Container/Container';
+import Body from '../components/Body/Body';
+import Layout from '../components/Layout/Layout';
+import { getSite } from '../lib/api';
+import Head from 'next/head';
 
 export default function Index({ preview, imprint, bgGraphic }) {
-
   return (
     <Layout preview={preview} bgGraphic={bgGraphic}>
       <Head>
         <title>GorliPark - Imprint</title>
       </Head>
       <Container>
-        <Body content={imprint} />      
+        <Body content={imprint} />
       </Container>
     </Layout>
   );
