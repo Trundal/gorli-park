@@ -2,7 +2,13 @@ import cn from "classnames";
 import Link from "next/link";
 import { imageBuilder } from "../lib/sanity";
 
-export default function CoverImage({ title, url, imageObject, slug }) {
+export default function CoverImage({
+  title,
+  url,
+  imageObject,
+  slug,
+  pageType,
+}) {
   const image = (
     <img
       style={{ borderRadius: "1.5rem" }}
@@ -19,7 +25,7 @@ export default function CoverImage({ title, url, imageObject, slug }) {
   return (
     <div>
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link as={`/${pageType}/${slug}`} href={`/${pageType}/[slug]`}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (
