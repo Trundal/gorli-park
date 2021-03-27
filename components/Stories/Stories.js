@@ -1,7 +1,7 @@
 import PostPreview from "../Preview/Preview";
 import styled from "./Stories.module.css";
 
-export default function MoreStories({ posts, title }) {
+export default function MoreStories({ posts, title, pageType }) {
   return (
     <section className={styled.wrapper}>
       <div>
@@ -18,7 +18,7 @@ export default function MoreStories({ posts, title }) {
               author={post.author}
               slug={post.slug}
               description={post.description}
-              pageType={title.toLowerCase()}
+              pageType={pageType}
             />
           </>
         ))}

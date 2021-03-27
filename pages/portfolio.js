@@ -11,7 +11,11 @@ export default function Index({ allPortfolioEntries, preview, site }) {
         <title>GorliPark - Portfolio</title>
       </Head>
       <Container>
-        <Stories posts={allPortfolioEntries} title={"Portfolio"} />
+        <Stories
+          posts={allPortfolioEntries}
+          title={"Portfolio"}
+          pageType={"portfolio"}
+        />
       </Container>
     </Layout>
   );

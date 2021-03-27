@@ -5,14 +5,13 @@ import { getAllPostsForHome, getSite } from "../lib/api";
 import Head from "next/head";
 
 export default function Index({ allPosts, preview, site }) {
-  const pageType = "posts";
   return (
     <Layout preview={preview} bgGraphic={site ? site.bgGraphic : null}>
       <Head>
         <title>GorliPark - Stories</title>
       </Head>
       <Container>
-        <Stories posts={allPosts} title={"Our Stories"} pageType={pageType} />
+        <Stories posts={allPosts} title={"Our Stories"} pageType={"posts"} />
       </Container>
     </Layout>
   );
