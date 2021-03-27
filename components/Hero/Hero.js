@@ -1,9 +1,9 @@
-import {useState} from 'react'
-import Image from "next/image";
-import { imageBuilder } from "../../lib/sanity";
-import Contact from '../Contact/Contact'
-import Modal from '../Modal/Modal'
-import styles from "./Hero.module.css";
+import { useState } from 'react';
+import Image from 'next/image';
+import { imageBuilder } from '../../lib/sanity';
+import Contact from '../Contact/Contact';
+import Modal from '../Modal/Modal';
+import styles from './Hero.module.css';
 
 export default function HeroPost({ title, coverImage, body }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -25,12 +25,14 @@ export default function HeroPost({ title, coverImage, body }) {
         <div>
           <p className={styles.body}>{body}</p>
         </div>
-        <button className={styles.btn} onClick={() => setModalOpen(!modalOpen)}>A THING</button>
-        { modalOpen && 
+        <button className={styles.btn} onClick={() => setModalOpen(!modalOpen)}>
+          Contact Us
+        </button>
+        {modalOpen && (
           <Modal closeModal={() => setModalOpen(false)}>
-            <Contact/>
+            <Contact />
           </Modal>
-          }
+        )}
       </div>
     </section>
   );

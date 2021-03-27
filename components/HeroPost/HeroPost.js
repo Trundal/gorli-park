@@ -1,8 +1,8 @@
-import Avatar from "../avatar";
-import Date from "../date";
-import CoverImage from "../cover-image";
-import Link from "next/link";
-import styled from "./HeroPost.module.css";
+import Avatar from '../avatar';
+import Date from '../date';
+import CoverImage from '../cover-image';
+import Link from 'next/link';
+import styled from './HeroPost.module.css';
 
 export default function HeroPost({ post }) {
   const { title, coverImage, date, description, author, slug } = post;
@@ -10,12 +10,7 @@ export default function HeroPost({ post }) {
     <section className={styled.section}>
       <div className={styled.img}>
         {/* not changing this to the next-image before i've figured out if sanity checks for webp  */}
-        <CoverImage
-          slug={slug}
-          imageObject={coverImage}
-          title={title}
-          url={coverImage}
-        />
+        <CoverImage slug={slug} imageObject={coverImage} title={title} url={coverImage} />
       </div>
       <div className={styled.textBlock}>
         <div className={styled.text}>
@@ -24,13 +19,11 @@ export default function HeroPost({ post }) {
               <a className={styled.title}>{title}</a>
             </Link>
           </h3>
-          <div className={styled.date}>
-            {date ? <Date dateString={date} /> : ""}
-          </div>
+          <div className={styled.date}>{date ? <Date dateString={date} /> : ''}</div>
           <p className={styled.description}>{description}</p>
         </div>
         <div className={styled.avatar}>
-          <div className={styled.border} >
+          <div className={styled.border}>
             <Avatar name={author?.name} picture={author?.picture} />
           </div>
         </div>

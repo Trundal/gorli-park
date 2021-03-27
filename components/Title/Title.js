@@ -1,6 +1,6 @@
 import styles from './Title.module.css';
 
-const Title = ({ title, name, date }) =>  {
+const Title = ({ title, name, date }) => {
   const d = new Date(date);
   return (
     <>
@@ -10,9 +10,7 @@ const Title = ({ title, name, date }) =>  {
         <div className={styles.date}>{d.toUTCString()}</div>
       </div>
     </>
-  )
-}
+  );
+};
 
-
-
-export default Title
+export default Title;

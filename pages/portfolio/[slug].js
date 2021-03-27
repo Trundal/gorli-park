@@ -1,23 +1,14 @@
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import Container from "../../components/container";
-import Stories from "../../components/Stories/Stories";
-import Layout from "../../components/Layout/Layout";
-import {
-  getAllPortfolioEntries,
-  getPortfolioEntryAndMorePortfolioEntries,
-  getSite,
-} from "../../lib/api";
-import PostTitle from "../../components/post-title";
-import Head from "next/head";
-import Article from "../../components/Article/Article";
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
+import Container from '../../components/container';
+import Stories from '../../components/Stories/Stories';
+import Layout from '../../components/Layout/Layout';
+import { getAllPortfolioEntries, getPortfolioEntryAndMorePortfolioEntries, getSite } from '../../lib/api';
+import PostTitle from '../../components/post-title';
+import Head from 'next/head';
+import Article from '../../components/Article/Article';
 
-export default function PortfolioEntry({
-  portfolioEntry,
-  morePortfolioEntries,
-  preview,
-  site,
-}) {
+export default function PortfolioEntry({ portfolioEntry, morePortfolioEntries, preview, site }) {
   const router = useRouter();
   if (!router.isFallback && !portfolioEntry?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -46,9 +37,7 @@ export default function PortfolioEntry({
             {/* <Comments comments={post.comments} />
             <Form _id={post._id} /> */}
 
-            {morePortfolioEntries.length > 0 && (
-              <Stories posts={morePortfolioEntries} title={"More Projects"} />
-            )}
+            {morePortfolioEntries.length > 0 && <Stories posts={morePortfolioEntries} title={'More Projects'} />}
           </>
         )}
       </Container>
@@ -57,10 +46,7 @@ export default function PortfolioEntry({
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const data = await getPortfolioEntryAndMorePortfolioEntries(
-    params.slug,
-    preview
-  );
+  const data = await getPortfolioEntryAndMorePortfolioEntries(params.slug, preview);
   const site = await getSite();
   return {
     props: {

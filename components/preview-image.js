@@ -1,22 +1,16 @@
-import cn from "classnames";
-import Link from "next/link";
-import { imageBuilder } from "../lib/sanity";
+import cn from 'classnames';
+import Link from 'next/link';
+import { imageBuilder } from '../lib/sanity';
 
-export default function CoverImage({
-  title,
-  url,
-  imageObject,
-  slug,
-  pageType,
-}) {
+export default function CoverImage({ title, imageObject, slug, pageType }) {
   const image = (
     <img
-      style={{ borderRadius: "1.5rem" }}
+      style={{ borderRadius: '1.5rem' }}
       width={500}
       height={300}
       alt={`Cover Image for ${title}`}
-      className={cn("", {
-        "": slug,
+      className={cn('', {
+        '': slug,
       })}
       src={imageBuilder(imageObject).width(500).height(300).url()}
     />

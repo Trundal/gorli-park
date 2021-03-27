@@ -1,9 +1,9 @@
-import Title from "../Title/Title";
-import Body from "../Body/Body";
-import Author from "../Author/Author";
-import CoverImage from "../CoverImage/CoverImage";
+import Title from '../Title/Title';
+import Body from '../Body/Body';
+import Author from '../Author/Author';
+import CoverImage from '../CoverImage/CoverImage';
 
-import styles from "./Article.module.css";
+import styles from './Article.module.css';
 
 const Article = ({ title, body, author, date, coverImage }) => (
   <div className={styles.section}>
