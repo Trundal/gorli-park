@@ -17,11 +17,8 @@ export default function Preview({ title, coverImage, date, description, slug, pa
         />
       </div>
       <h3>
-        <Link as={`/${pageType.toLowerCase()}/${slug}`} href={`/${pageType.toLowerCase()}/[slug]`}>
-          <a className={styled.title}>
-            {title}
-            {pageType}
-          </a>
+        <Link as={`/${pageType}/${slug}`} href={`/${pageType}/[slug]`}>
+          <a className={styled.title}>{title}</a>
         </Link>
       </h3>
       <div className={styled.date}>{date ? <Date dateString={date} /> : ''}</div>
