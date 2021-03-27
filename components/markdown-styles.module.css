@@ -36,6 +36,6 @@
 .markdown html,
 .markdown body {
   text-rendering: optimizeLegibility;
-  font-feature-settings: "kern";
+  font-feature-settings: 'kern';
   font-kerning: normal;
 }

@@ -1,6 +1,6 @@
 import styles from "./Modal.module.css";
 
-export default function modal({ children, closeModal }) {
+const Modal = ({ children, closeModal }) => (
   <div className={styles.modalBG}>
     <div className={styles.modalWrapper}>
       <div className={styles.modal}>
@@ -10,5 +10,7 @@ export default function modal({ children, closeModal }) {
         {children}
       </div>
     </div>
-  </div>;
-}
+  </div>
+);
+
+export default Modal;

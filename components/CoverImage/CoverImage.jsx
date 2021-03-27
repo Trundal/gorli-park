@@ -1,22 +1,16 @@
-import cn from "classnames";
-import Link from "next/link";
-import { imageBuilder } from "../../lib/sanity";
-import Carousele from "react-alice-carousel";
-import styles from "./CoverImage.module.css";
+import cn from 'classnames';
+import Link from 'next/link';
+import { imageBuilder } from '../../lib/sanity';
+import Carousele from 'react-alice-carousel';
+import styles from './CoverImage.module.css';
 
-export default function CoverImage({
-  title,
-  url,
-  imageObject,
-  slug,
-  pageType,
-}) {
+export default function CoverImage({ title, imageObject, slug, pageType }) {
   const image = (
     <img
-      style={{ width: "100%" }}
+      style={{ width: '100%' }}
       alt={`Cover Image for ${title}`}
-      className={cn("", {
-        "": slug,
+      className={cn('', {
+        '': slug,
       })}
       src={imageBuilder(imageObject).width(1240).height(540).url()}
     />
@@ -37,10 +31,10 @@ export default function CoverImage({
             ? image
             : imageObject.map((image) => {
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: '100%' }}
                   alt={`Cover Image for ${title}`}
-                  className={cn("", {
-                    "": slug,
+                  className={cn('', {
+                    '': slug,
                   })}
                   src={imageBuilder(image).width(1240).height(540).url()}
                 />;

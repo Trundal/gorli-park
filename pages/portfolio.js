@@ -1,8 +1,8 @@
-import Container from "../components/container";
-import Stories from "../components/Stories/Stories";
-import Layout from "../components/Layout/Layout";
-import { getAllPortfolioEntries, getSite } from "../lib/api";
-import Head from "next/head";
+import Container from '../components/container';
+import Stories from '../components/Stories/Stories';
+import Layout from '../components/Layout/Layout';
+import { getAllPortfolioEntries, getSite } from '../lib/api';
+import Head from 'next/head';
 
 export default function Index({ allPortfolioEntries, preview, site }) {
   return (

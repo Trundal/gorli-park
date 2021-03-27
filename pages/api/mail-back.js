@@ -1,5 +1,7 @@
-"use strict";
-const nodemailer = require("nodemailer");
+/* eslint-disable no-undef */
+/* eslint-disable no-inner-declarations */
+'use strict';
+const nodemailer = require('nodemailer');
 
 export default function handler(req, res) {
   const { email, name } = req.body;
@@ -7,7 +9,7 @@ export default function handler(req, res) {
   try {
     // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
+      host: 'smtp.ethereal.email',
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
@@ -21,15 +23,15 @@ export default function handler(req, res) {
         from: '"GorliPark" <info@example.com>', // sender address
         to: `${email}`, // list of receivers
         subject: `Thank you ${name} for contacting GorliPark`, // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
+        text: 'Hello world?', // plain text body
+        html: '<b>Hello world?</b>', // html body
       });
 
       console.log(`Message sent: ${email}`, info.messageId);
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     }
     if (!email || !name) {
-      throw new error("did not receive name or email adress");
+      throw new error('did not receive name or email adress');
     }
     send();
     res.status(200).json(`Message sent: ${email}`);
