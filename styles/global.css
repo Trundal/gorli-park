@@ -1,17 +1,18 @@
 :root,
-body {
+body,
+html {
   --black: #0a1714;
   --white: #fcfbf9;
   --primaryColor: #f4d570;
   --secondaryColor: #70f4d5;
-  --backgroundColor: #58585B;
+  --backgroundColor: #58585b;
 
-  --font: "Quicksand", sans-serif;
+  --font: 'Quicksand', sans-serif;
 
   padding: 0;
   margin: 0;
   font-size: 14px;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 
   background-color: var(--white);
   color: var(--white);
