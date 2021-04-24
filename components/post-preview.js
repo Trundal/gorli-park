@@ -4,11 +4,17 @@ import Link from 'next/link';
 import { imageBuilder } from '../lib/sanity';
 import styled from './post-preview.module.css';
 
-export default function PostPreview({ title, coverImage, date, description, slug }) {
+export default function PostPreview({ title, coverImage, date, description, slug, pageType }) {
   return (
     <div style={{ width: '50rem', marginBottom: '2rem' }}>
       <div>
-        <PreviewImage slug={slug} title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
+        <PreviewImage
+          slug={slug}
+          title={title}
+          imageObject={coverImage}
+          url={imageBuilder(coverImage).url()}
+          pageType={pageType}
+        />
       </div>
       <h3>
         <Link as={`/posts/${slug}`} href={`/posts/[slug]`}>

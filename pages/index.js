@@ -27,7 +27,7 @@ export default function Index({ allPosts, preview, landingPage, site }) {
       </Container>
       <Container>
         {heroPost && <HeroPost post={heroPost} />}
-        {morePosts.length > 0 && <Stories posts={morePosts} title={'More Stories'} />}
+        {morePosts.length > 0 && <Stories posts={morePosts} title={'More Stories'} pageType={'posts'} />}
       </Container>
     </Layout>
   );
