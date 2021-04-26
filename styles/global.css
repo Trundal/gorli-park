@@ -1,3 +1,8 @@
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */
 :root,
 body,
 html {
@@ -6,7 +11,6 @@ html {
   --primaryColor: #f4d570;
   --secondaryColor: #70f4d5;
   --backgroundColor: #58585b;
-
   --font: 'Quicksand', sans-serif;
 
   padding: 0;
@@ -16,6 +20,17 @@ html {
 
   background-color: var(--white);
   color: var(--white);
+
+  overflow-x: hidden;
+}
+h3 {
+  font-size: 4.8rem;
+}
+
+@media screen and (max-width: 480px) {
+  h3 {
+    font-size: 2.5rem;
+  }
 }
 
 a {
