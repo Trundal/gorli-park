@@ -12,6 +12,14 @@ export default function CoverImage({ title, imageObject, slug, pageType }) {
       className={cn('', {
         '': slug,
       })}
+      srcSet={
+        (`${imageBuilder(imageObject).width(960).url()} 1920px`,
+        `${imageBuilder(imageObject).width(800).url()} 1600px`,
+        `${imageBuilder(imageObject).width(683).url()} 1366px`,
+        `${imageBuilder(imageObject).width(512).url()} 1024px`,
+        `${imageBuilder(imageObject).width(300).url()} 768px`,
+        `${imageBuilder(imageObject).width(200).url()} 640px`)
+      }
       src={imageBuilder(imageObject).width(500).height(300).url()}
     />
   );
