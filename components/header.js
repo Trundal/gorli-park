@@ -35,12 +35,16 @@ export default function Header() {
           </Link>
         </h2>
         <h2>
-          <Link href="/">
+          <Link href="/about">
             <a>ABOUT US</a>
           </Link>
         </h2>
       </div>
-      <Logo className={styled.logo} />
+      <Link href="/">
+        <a>
+          <Logo className={styled.logo} />
+        </a>
+      </Link>
       <div className={cx(styled.externalLinks, { [styled.active]: isOn })}>
         <Link href="/">
           <div className={styled.externalLinkIcon}>
