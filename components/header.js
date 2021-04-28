@@ -6,6 +6,8 @@ import Logo from './logo';
 import styled from './header.module.css';
 import cx from 'classnames';
 import { useState, useCallback } from 'react';
+import Burger from './images/burger';
+import AnX from './images/anX';
 
 export default function Header() {
   function useToggle(initialValue = true) {
@@ -19,7 +21,7 @@ export default function Header() {
   return (
     <header className={cx(styled.header, { [styled.headerExpand]: !isOn })}>
       <button className={styled.tempButton} onClick={toggleIsOn}>
-        ✘
+        <div className={styled.burger}>{isOn ? <Burger /> : <AnX />}</div>
       </button>
       <div className={cx(styled.internalLinks, { [styled.active]: isOn })}>
         <h2>
