@@ -1,0 +1,46 @@
+.top {
+  animation: top 1s cubic-bezier(0.4, 0, 0.6, 1);
+  transform-origin: 50% 20%;
+}
+
+.bottom {
+  animation: bottom 1s cubic-bezier(0.4, 0, 0.6, 1);
+  transform-origin: -13% 55%;
+}
+
+.middle {
+  animation: middle 0.5s steps(1) 0.5s;
+}
+
+@keyframes top {
+  0% {
+    transform: translateY(0) translateY(0);
+  }
+  50% {
+    transform: translateY(25px) rotate(0);
+  }
+  100% {
+    transform: translateY(25px) rotate(-45deg);
+  }
+}
+
+@keyframes bottom {
+  0% {
+    transform: translateY(0) translateY(0);
+  }
+  50% {
+    transform: translateY(-25px) rotate(0);
+  }
+  100% {
+    transform: translateY(-25px) rotate(45deg);
+  }
+}
+
+@keyframes middle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
