@@ -13,14 +13,14 @@ export default function HeroPost({ title, coverImage, body }) {
       <div className={styles.img}>
         <Image
           alt={`imager representing the thitle of ${title}`}
-          srcSet={
-            (`${imageBuilder(coverImage).width(910).height(910).url()} 1920px`,
-            `${imageBuilder(coverImage).width(800).height(800).url()} 1600px`,
-            `${imageBuilder(coverImage).width(683).height(683).url()} 1366px`,
-            `${imageBuilder(coverImage).width(512).height(512).url()} 1024px`,
-            `${imageBuilder(coverImage).width(384).height(384).url()} 768px`,
-            `${imageBuilder(coverImage).width(320).height(320).url()} 640px`)
-          }
+          // srcSet={
+          //   (`${imageBuilder(coverImage).width(910).height(910).url()} 1920px`,
+          //   `${imageBuilder(coverImage).width(800).height(800).url()} 1600px`,
+          //   `${imageBuilder(coverImage).width(683).height(683).url()} 1366px`,
+          //   `${imageBuilder(coverImage).width(512).height(512).url()} 1024px`,
+          //   `${imageBuilder(coverImage).width(384).height(384).url()} 768px`,
+          //   `${imageBuilder(coverImage).width(320).height(320).url()} 640px`)
+          // }
           src={imageBuilder(coverImage).width(500).height(500).url()}
           width={500}
           height={500}
