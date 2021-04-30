@@ -1,0 +1,43 @@
+.popDown {
+  animation: popDown 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.popInLeft {
+  animation: popInLeft 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.popInRight {
+  animation: popInRight 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes popDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes popInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
