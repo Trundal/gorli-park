@@ -19,7 +19,7 @@ export default function Header() {
   }
   const [isOn, toggleIsOn] = useToggle();
   return (
-    <header className={cx(styled.header, { [styled.headerExpand]: !isOn })}>
+    <header className={`popDown ${cx(styled.header, { [styled.headerExpand]: !isOn })}`}>
       <button className={styled.tempButton} onClick={toggleIsOn}>
         <div className={styled.burger}>{isOn ? <Burger /> : <AnX />}</div>
       </button>

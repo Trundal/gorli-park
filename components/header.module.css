@@ -5,6 +5,8 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  transition: height 0.5s;
+  height: 6rem;
 }
 
 .internalLinks {

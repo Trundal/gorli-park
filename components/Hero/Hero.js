@@ -10,7 +10,7 @@ export default function HeroPost({ title, coverImage, body }) {
 
   return (
     <section className={styles.section}>
-      <div className={styles.img}>
+      <div className={`popInLeft ${styles.img}`}>
         <Image
           alt={`imager representing the thitle of ${title}`}
           // srcSet={
@@ -26,7 +26,7 @@ export default function HeroPost({ title, coverImage, body }) {
           height={500}
         />
       </div>
-      <div className={styles.text}>
+      <div className={`popInRight ${styles.text}`}>
         <div>
           <h3 className={styles.title}>{title}</h3>
         </div>
