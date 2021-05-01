@@ -16,7 +16,7 @@ export default function Preview({ title, coverImage, date, description, slug, pa
           url={imageBuilder(coverImage).url()}
         />
       </div>
-      <h3>
+      <h3 className={styled.h3Title}>
         <Link as={`/${pageType}/${slug}`} href={`/${pageType}/[slug]`}>
           <a className={styled.title}>{title}</a>
         </Link>
