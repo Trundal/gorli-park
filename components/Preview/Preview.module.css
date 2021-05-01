@@ -6,7 +6,13 @@
 
 .title {
   font-size: 2rem;
-  color: var(--white)
+  color: var(--white);
+}
+
+.h3Title {
+  line-height: 1rem;
+  color: var(--white);
+  margin-bottom: 1rem;
 }
 
 .date date,
@@ -19,4 +25,3 @@
   width: 100%;
   height: 100%;
 }
-

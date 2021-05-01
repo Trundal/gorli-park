@@ -16,7 +16,7 @@ export default function PostPreview({ title, coverImage, date, description, slug
           pageType={pageType}
         />
       </div>
-      <h3>
+      <h3 className={styled.title}>
         <Link as={`/posts/${slug}`} href={`/posts/[slug]`}>
           <a className={styled.title}>{title}</a>
         </Link>
